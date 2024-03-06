@@ -1,31 +1,149 @@
-.App {
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('./icons/bg.gif'); /* Path to your GIF */
+  background-size: cover; /* Cover the entire area of the body */
+  background-repeat: no-repeat;
+}
+
+header {
+  background: linear-gradient(to top, #767272, #333); /* Gradient from light to dark grey */
+  color: #fff;
+  padding: 20px;
   text-align: center;
+  border-radius: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin: 0;
+  font-size: 2em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
+  width: 80%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-image: url('./icons/Devops\ db.gif'); /* Path to your GIF */
+  background-size: cover; /* Cover the entire area of the div */
+  background-repeat: no-repeat; /* Prevent the GIF from repeating */
+  background-position: center;
+}
+
+.region-selector {
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  position: relative; /* Relative positioning for dropdown animation */
+}
+
+.region-label {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #988944;
+}
+
+.region-selector-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100px; /* Adjust the height as needed */
+  width: 100%; /* Adjust the width as needed */
+}
+
+.region-select {
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 200px;
+  margin: 0;
+  background-color: #fff;
+  color: #007bff;
+  box-sizing: border-box;
+  appearance: none;
+  background-image: url('./icons/down-arrow.png'); /* Path to your custom icon */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-appearance: none; /* Removes default styling for WebKit browsers */
+  -moz-appearance: none;    /* Removes default styling for Firefox browsers */
+  appearance: none;    
+}
+
+/* Dropdown Animation */
+
+
+.region-select::after {
+  content: '\25BC'; /* Downward arrow character */
+  font-size: 0.8em;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #007bff; /* Blue color for the icon to stand out on white background */
+  pointer-events: none; /* Ensures the icon doesn't interfere with clicking the select box */
+}
+
+.region-select:hover,
+.region-select:focus {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-color: #0056b3;
+}
+
+.region-select:hover::after,
+.region-select:focus::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.navigation-links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navigation-link {
+  margin-bottom: 10px;
+  background-color: #007bff;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.heart {
-  color: #ff0000;
+.navigation-link a {
+  color: #fff;
+  text-decoration: none;
 }
 
-.small {
-  font-size: 0.75rem;
+.navigation-link:hover {
+  background-color: #0056b3;
+}
+
+.alert {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
 }
